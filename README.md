@@ -5,7 +5,12 @@ The aim is to build a minimal protobuf RPC lib using [Google's Protocol Buffers]
 The only dependency is [Protocol Buffers](https://github.com/google/protobuf).
 
 # How to use
-To use it is really simple, only two functions:
+To use this lib is really simple. First define `ServiceManager` some where in your code.
+```c
+ServiceManager srvMan;
+```
+
+Then the `ServiceManager` only provides two functions:
 
 1. Register a service:
 ```c
