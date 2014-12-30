@@ -45,7 +45,7 @@ public:
         return (_methods.find(methodName) != _methods.end());
     }
 
-    Service             *_service;    /**< The service */
+    Service                *_service;    /**< The service */
     map<string, MethodRPC>  _methods;    /**< The methods in service */
 };
 

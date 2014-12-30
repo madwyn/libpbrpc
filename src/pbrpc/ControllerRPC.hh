@@ -39,7 +39,7 @@ public:
 
     // not in use
     void StartCancel() {}
-    bool IsCanceled() const {};
+    bool IsCanceled() const { return false; };
     void NotifyOnCancel(Closure *callback) {};
 
 private:
