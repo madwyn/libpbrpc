@@ -63,4 +63,4 @@ install(TARGETS ${INS_TARGETS}
     ARCHIVE DESTINATION lib COMPONENT libraries
 )
 
-install(FILES ${INS_TARGETS} DESTINATION "include${INS_INCLUDE_DIR}" COMPONENT headers)
+install(FILES ${proto_HDRS} DESTINATION "include${INS_INCLUDE_DIR}" COMPONENT headers)

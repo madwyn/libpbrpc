@@ -52,6 +52,10 @@ target_link_libraries(pbrpc
     pbrpc_proto
 )
 
+set(INS_INCLUDE_DIR
+    "/pbrpc"
+)
+
 set(INS_TARGETS
     pbrpc
 )
@@ -63,4 +67,4 @@ install(TARGETS ${INS_TARGETS}
     ARCHIVE DESTINATION lib COMPONENT libraries
 )
 
-install(FILES ${pbrpc_HDRS} DESTINATION include/pbrpc)
+install(FILES ${pbrpc_HDRS} DESTINATION "include${INS_INCLUDE_DIR}" COMPONENT headers)
