@@ -4,7 +4,7 @@ syntax = "proto3";
 package pbrpc;
 
 message Request {
-                                    // A String specifying the version of the PB-RPC protocol. MUST be exactly "1.0".
+                                    // A String specifying the version of the PB-RPC protocol. MUST be exactly "1.1".
     optional string  pbrpc   = 1;
                                     // A string containing the name of the service to be used.
     optional string  service = 2;
