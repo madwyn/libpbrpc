@@ -46,12 +46,9 @@ void genResponse(string &ret, Response &rpcResponse, Message *response, Controll
         rpcResponse.mutable_error()->CopyFrom(error);
     }
     else {
+        // response could be NULL when the response is NOT required (empty)
         if (NULL != response) {
             rpcResponse.set_result(response->SerializeAsString());
-        }
-        else {
-            controller->SetFailed("The response is NULL but there is no error record in the controller, that's impossible!");
-            genResponse(ret, rpcResponse, response, controller);
         }
     }
 
@@ -120,7 +117,7 @@ bool ServiceManager::isValidParams(const char *data, const size_t len, Controlle
 bool ServiceManager::isValidRequest(const Request &request, ControllerRPC *controller) const {
     // check the version is valid
     if (!(isValidVersion(request.pbrpc()))) {
-        controller->SetFailed("RPC reqeust version does not qualify: Actual version: " + request.pbrpc() + " Required version: " + PBRPC_VERSION);
+        controller->SetFailed("The RPC reqeust version does not qualify: Actual version: " + request.pbrpc() + " Required version: " + PBRPC_VERSION);
         return false;
     }
 

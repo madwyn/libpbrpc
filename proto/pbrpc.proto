@@ -1,15 +1,15 @@
-syntax = "proto2";
+syntax = "proto3";
 
-// The definition of PB-RPC 1.0
+// The definition of PB-RPC 1.1
 package pbrpc;
 
 message Request {
                                     // A String specifying the version of the PB-RPC protocol. MUST be exactly "1.0".
-    required string  pbrpc   = 1;
+    optional string  pbrpc   = 1;
                                     // A string containing the name of the service to be used.
-    required string  service = 2;
+    optional string  service = 2;
                                     // A String containing the name of the method to be invoked.
-    required string  method  = 3;
+    optional string  method  = 3;
                                     // Pre-encoded PB binary structured value that holds the parameter values to be used during the invocation of the method.
     optional bytes   params  = 4;
                                     // An identifier established by the Client that MUST contain a String value if included. If it is not included it is assumed to be a notification.
@@ -19,7 +19,7 @@ message Request {
 
 message Error {
                                     // A String providing a short description of the error. The message SHOULD be limited to a concise single sentence.
-    required string  message = 1;
+    optional string  message = 1;
                                     // Pre-encoded structured value that contains additional information about the error.
                                     // This may be omitted.
                                     // The value of this member is defined by the Server (e.g. detailed error information, nested errors etc.).
@@ -28,8 +28,8 @@ message Error {
 
 message Response {
                                     // A String specifying the version of the PB-RPC protocol. MUST be exactly "1.0".
-    required string  pbrpc  = 1;
-                                    // Pre-encoded PB message. This member is REQUIRED on success.
+    optional string  pbrpc  = 1;
+                                    // Pre-encoded PB message. This member is RECOMMENDED on success.
                                     // This member MUST NOT exist if there was an error invoking the method.
                                     // The value of this member is determined by the method invoked on the Server.
     optional bytes   result = 2;
