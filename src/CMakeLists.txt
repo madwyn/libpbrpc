@@ -4,9 +4,6 @@ project(pbrpc)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-if(WIN32 AND BUILD_SHARED_LIBS AND MSVC)
-    add_definitions("-DPROTOBUF_USE_DLLS")
-endif()
 
 include(FindProtobuf)
 find_package(Protobuf REQUIRED)

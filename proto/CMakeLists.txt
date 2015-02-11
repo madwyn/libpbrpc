@@ -2,9 +2,6 @@ cmake_minimum_required(VERSION 2.8.4)
 
 project(pbrpc_proto)
 
-if(BUILD_SHARED_LIBS AND WIN32 AND MSVC)
-    add_definitions("-DPROTOBUF_USE_DLLS")
-endif()
 
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
