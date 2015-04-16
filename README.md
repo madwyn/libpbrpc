@@ -1,6 +1,8 @@
 # libpbrpc
 The aim is to build a minimal protobuf RPC lib using [Google's Protocol Buffers](https://code.google.com/p/protobuf).
 
+libpbrpc is flexible as it is not bound to the http server, it's a lightweight middleware.
+
 # Dependencies
 The only dependency is [Protocol Buffers](https://github.com/google/protobuf).
 
@@ -12,18 +14,18 @@ ServiceManager srvMan;
 
 Then the `ServiceManager` only provides two functions:
 
--1. Register a service:
-```c
-void regService(Service *service);
-```
+1. Register a service:
+    ```c
+    void regService(Service *service);
+    ```
 
--2. Handle the RPC message:
-```c
-void handleRPC(const char *data, const size_t len, string &ret);
-```
-- `data` is the raw Protobuf binary,
-- `len` is the length of the data,
-- `ret` is the result generated, you can send it back directly. (Note: use ret.length() to get the correct length.)
+2. Handle the RPC message:
+    ```c
+    void handleRPC(const char *data, const size_t len, string &ret);
+    ```
+    - `data` is the raw Protobuf binary,
+    - `len` is the length of the data,
+    - `ret` is the result generated, you can send it back directly. (Note: use ret.length() to get the correct length.)
 
 # How it's made
 The over all design is really simple:
