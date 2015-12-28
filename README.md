@@ -35,3 +35,6 @@ The over all design is really simple:
 
 # Examples
 Please take a look of my other repository [pbrpc](https://github.com/madwyn/pbrpc) as a demo which implements a simple RPC server.
+
+# Limitations
+One major limitation of this library is it's synchronous. It is possible to adapt task queue for asynchronous message handling. 
