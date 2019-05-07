@@ -27,7 +27,7 @@ message Error {
 }
 
 message Response {
-                                    // A String specifying the version of the PB-RPC protocol. MUST be exactly "1.0".
+                                    // A String specifying the version of the PB-RPC protocol. MUST be exactly "1.1".
     optional string  pbrpc  = 1;
                                     // Pre-encoded PB message. This member is RECOMMENDED on success.
                                     // This member MUST NOT exist if there was an error invoking the method.
